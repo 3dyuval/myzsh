@@ -1,0 +1,108 @@
+# Profiling; uncomment next line and last line
+# zmodload zsh/zprof
+
+# locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+autoload zmv
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+
+zstyle ':completion:*' menu select
+fpath+="$HOME/.zfunc"
+
+export PATH="$HOME/.local/bin:$PATH"
+
+export HOMEBREW_NO_ANALYTICS=1
+
+export ZSH=$HOME/.oh-my-zsh
+ZSH_CUSTOM=$HOME/.zsh-custom
+
+ENABLE_CORRECTION="true"
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
+
+DISABLE_UPDATE_PROMPT=true
+
+# Starship
+export STARSHIP_CONFIG="$HOME/.starship.toml"
+
+plugins=( \
+    asdf \
+    brew \
+    direnv \
+    docker \
+    docker-compose \
+    git \
+    history \
+    history-substring-search \
+    httpie \
+    kubectl \
+    macos \
+    redis-cli \
+    screen \
+    ssh-agent \
+    starship \
+    zoxide \
+    zsh-autosuggestions \
+    zsh-syntax-highlighting \
+)
+
+source $ZSH/oh-my-zsh.sh
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
+if [ -f $HOME/.aliases.zsh ]; then
+    . $HOME/.aliases.zsh
+fi
+
+if [ -f $HOME/.functions.zsh ]; then
+    . $HOME/.functions.zsh
+fi
+
+# Python
+export PYTHONSTARTUP=$HOME/.pystartup
+export PYTHONDONTWRITEBYTECODE=1
+
+# neovim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
+
+# iTerm2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# GPG
+export GPG_TTY=$(tty)
+
+# Link against Homebrew versions of libraries
+local -r LINK_PREFIX="/opt/homebrew/opt"
+export CFLAGS="-I$LINK_PREFIX/readline/include -I$LINK_PREFIX/openssl@3/include -I$LINK_PREFIX/zlib/include -I$LINK_PREFIX/sqlite/include -I$LINK_PREFIX/libffi/include -I$LINK_PREFIX/libpng/include -I$LINK_PREFIX/zstd/include"
+export LDFLAGS="-L$LINK_PREFIX/readline/lib -L$LINK_PREFIX/openssl@3/lib -L$LINK_PREFIX/zlib/lib -L$LINK_PREFIX/sqlite/lib -L$LINK_PREFIX/libffi/lib -L$LINK_PREFIX/libpng/lib -L$LINK_PREFIX/zstd/lib"
+export PKG_CONFIG_PATH="$LINK_PREFIX/readline/lib/pkgconfig:$LINK_PREFIX/openssl@3/lib/pkgconfig:$LINK_PREFIX/zlib/lib/pkgconfig:$LINK_PREFIX/sqlite/lib/pkgconfig:$LINK_PREFIX/libffi/lib/pkgconfig:$LINK_PREFIX/libpng/lib/pkgconfig:$LINK_PREFIX/zstd/lib/pkgconfig"
+
+# ripgrep
+export RIPGREP_CONFIG_PATH="${HOME}/.ripgreprc"
+
+# asdf
+if [ -f ${ASDF_DIR}/asdf.sh ]; then
+    . ${ASDF_DIR}/asdf.sh
+    fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
+autoload -Uz compinit && compinit
+
+eval "$(register-python-argcomplete pipx)"
+
+. "$HOME/.cargo/env"
+
+export GOPATH=$HOME/.go
+export PATH="$GOPATH/bin:$PATH"
+
+# eval "$(devbox global shellenv --init-hook)"
+
+# Profiling; uncomment next line and first line
+# zprof
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
