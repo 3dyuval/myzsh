@@ -1,30 +1,76 @@
-# dotfiles
+# ZSH Configuration and Dotfiles
 
-Common configuration files and handy scripts to use when setting up or improving a shell environment.
+A comprehensive setup for ZSH with configuration files for various developer tools and utilities.
 
-## Installation
-```shell
-$ git clone https://github.com/daneah/dotfiles
-$ cd dotfiles
-$ git submodule update --init --recursive
-$ ./install.zsh
+## Quick Start
+
+### Installation
+
+```bash
+# Clone this repository
+git clone https://github.com/3dyuval/myzsh.git
+cd myzsh
+
+# Install ZSH and Oh My Posh 
+chmod +x install-zsh-ohmyposh.sh
+./install-zsh-ohmyposh.sh
+
+# Install
+./my.zsh --all
 ```
 
-## Configuration Files
+```bash
+# (Optional- for MacOS) Install packages with Homebrew
+brew bundle
+```
+After installation, restart your terminal to apply all changes.
 
-| File            | Purpose                                                                                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Brewfile`      | A list of things to be installed using [Homebrew](https://brew.sh/)                                                                                                           |
-| `alexrc`        | Configuration for [`alex`](https://github.com/get-alex/alex), the considerate writing tool.                                                                                   |
-| `aliases.zsh`   | Command aliases that work in `zsh` but may not be safe for other shells.                                                                                                      |
-| `ctags`         | Configuration for the `ctags` indexing tool.                                                                                                                                  |
-| `functions.zsh` | Function definitions useful in `zsh` that may not be safe for other shells.                                                                                                   |
-| `gitconfig`     | Configuration to provide convenience methods when using `git` on the command line. Supports an untracked `~/.gitconfig.local` file to avoid committing sensitive information. |
-| `hushlogin`     | Tells macOS not to include Last Login messages on shell startup.                                                                                                              |
-| `pystartup`     | Configuration for Python startup, namely to enable readline capabilities from previous sessions along with tab completion.                                                    |
-| `ripgreprc`     | Configuration for [`ack`](https://linux.die.net/man/1/ack). Ignores several common generated output directory patterns.                                                       |
-| `screenrc`      | Configuration for [`screen`](https://www.gnu.org/software/screen/) status line.                                                                                               |
-| `starship.toml` | Configuration for [Starship](https://starship.rs/) command prompts.                                                                                                           |
-| `vimrc`         | Configuration to improve the user experience of [Vim](https://www.vim.org/). No fancy macros, just good highlighting and native settings along with some position history.    |
-| `zshrc`         | Configuration settings for making `zsh` even more awesome.                                                                                                                    |
-| `zprofile`      | Environment changes during startup.                                                                                                                                           |
+## Features
+
+This repository includes configuration for:
+
+- [ZSH](ZSH.md)
+```bash
+# Installs ZSH shell configuration with aliases and functions
+./my.zsh --zsh
+```
+- [Neovim](NEOVIM.md)
+```bash
+# Configures Neovim editor with plugins and custom keymaps
+./my.zsh --nvim
+```
+- [Git](GIT.md)
+```bash
+# Sets up Git version control with useful defaults and aliases
+./my.zsh --git
+```
+- [Starship](STARSHIP.md)
+```bash
+# Configures Starship cross-shell prompt with custom theme
+./my.zsh --starship
+```
+- [Ripgrep](RIPGREP.md)
+```bash
+# Installs Ripgrep configuration with custom file type definitions
+./my.zsh --ripgrep
+```
+- [Homebrew](HOMEBREW.md)
+```bash
+# Installs essential development packages for macOS/Linux
+brew bundle --verbose
+```
+- [Configuration](CONFIG.md)
+```bash
+# Sets up ZSH and Oh My Posh environment
+./_install.sh --all
+```
+
+## Customization (Work in Progress)
+
+> **Note**: Feature-specific opt-in instructions are coming soon. This will allow you to selectively enable only the components you need.
+> 
+> Check back for updates on customizable installation options.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
