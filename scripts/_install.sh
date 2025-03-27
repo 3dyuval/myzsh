@@ -49,4 +49,4 @@ fi
 
 echo "Installation complete!"
 echo "Please restart your terminal and run 'zsh' to start using your new shell."
-echo "For Oh My Posh configuration, see: https://ohmyposh.dev/docs/configuration/overview"
+echo "For Oh My Posh Docs, see: https://ohmyposh.dev/docs"
