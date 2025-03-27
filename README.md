@@ -1,76 +1,65 @@
-# ZSH Configuration and Dotfiles
+# myzsh
 
-A comprehensive setup for ZSH with configuration files for various developer tools and utilities.
+## Installation
 
-## Quick Start
-
-### Installation
-
+### Clone this repository
 ```bash
-# Clone this repository
 git clone https://github.com/3dyuval/myzsh.git
 cd myzsh
-
-# Install ZSH and Oh My Posh 
-chmod +x install-zsh-ohmyposh.sh
-./install-zsh-ohmyposh.sh
-
-# Install
-./my.zsh --all
 ```
 
-```bash
-# (Optional- for MacOS) Install packages with Homebrew
-brew bundle
-```
-After installation, restart your terminal to apply all changes.
-
-## Features
-
-This repository includes configuration for:
-
-- [ZSH](ZSH.md)
-```bash
-# Installs ZSH shell configuration with aliases and functions
-./my.zsh --zsh
-```
-- [Neovim](NEOVIM.md)
-```bash
-# Configures Neovim editor with plugins and custom keymaps
-./my.zsh --nvim
-```
-- [Git](GIT.md)
-```bash
-# Sets up Git version control with useful defaults and aliases
-./my.zsh --git
-```
-- [Starship](STARSHIP.md)
-```bash
-# Configures Starship cross-shell prompt with custom theme
-./my.zsh --starship
-```
-- [Ripgrep](RIPGREP.md)
-```bash
-# Installs Ripgrep configuration with custom file type definitions
-./my.zsh --ripgrep
-```
-- [Homebrew](HOMEBREW.md)
-```bash
-# Installs essential development packages for macOS/Linux
-brew bundle --verbose
-```
+### SH and Oh My Posh environment
 - [Configuration](CONFIG.md)
 ```bash
-# Sets up ZSH and Oh My Posh environment
-./_install.sh --all
+./_install.sh
+```
+**Then restart your terminal to apply all changes.**
+
+### Add permissions
+```bash
+chmod +x my.zsh
 ```
 
-## Customization (Work in Progress)
+### (Optional- for MacOS) Install packages with Homebrew
+```bash
+brew bundle
+```
 
-> **Note**: Feature-specific opt-in instructions are coming soon. This will allow you to selectively enable only the components you need.
-> 
-> Check back for updates on customizable installation options.
 
-## License
+## Features
+This repository includes configuration for:
+
+### Installs ZSH aliases and functions
+- [ZSH](ZSH.md)
+```zsh
+sudo ./my.zsh --zsh
+```
+### Neovim plugins / custom keymaps
+- [Neovim](NEOVIM.md)
+```zsh
+./my.zsh --nvim
+```
+### Git useful defaults and aliases
+- [Git](GIT.md)
+```zsh
+./my.zsh --git
+```
+### Starship cross-shell prompt with custom theme
+- [Starship](STARSHIP.md)
+```zsh
+./my.zsh --starship
+```
+### Ripgrep custom file type definitions
+- [Ripgrep](RIPGREP.md)
+```zsh
+./my.zsh --ripgrep
+```
+### Development packages for macOS/Linux
+- [Homebrew](HOMEBREW.md)
+```zsh
+brew bundle --verbose
+```
+
+#### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
