@@ -11,6 +11,7 @@ FEATURES=(
     bat 0
     misc 0
     all 0
+    disable_all 0
 )
 
 # Create or remove symbolic links based on feature flags
@@ -47,6 +48,7 @@ print_help() {
     echo "Usage: $0 [options]"
     echo "Options:"
     echo "  --all         Install all features"
+    echo "  --disable-all Disable all features (remove all symlinks)"
     echo "  --zsh         Install ZSH configuration"
     echo "  --nvim        Install Neovim configuration"
     echo "  --git         Install Git configuration"
@@ -72,6 +74,9 @@ parse_args() {
         case $arg in
             --all)
                 FEATURES[all]=1
+                ;;
+            --disable-all)
+                FEATURES[disable_all]=1
                 ;;
             --zsh)
                 FEATURES[zsh]=1
@@ -110,6 +115,15 @@ parse_args() {
     if [[ ${FEATURES[all]} -eq 1 ]]; then
         for feature in ${(k)FEATURES}; do
             FEATURES[$feature]=1
+        done
+    fi
+    
+    # If --disable-all is specified, ensure all features are set to 0
+    if [[ ${FEATURES[disable_all]} -eq 1 ]]; then
+        for feature in ${(k)FEATURES}; do
+            if [[ $feature != "disable_all" ]]; then
+                FEATURES[$feature]=0
+            fi
         done
     fi
 }
@@ -220,14 +234,14 @@ install_misc() {
     create_symlink "$misc_dir/screenrc" "$HOME/.screenrc" ${FEATURES[misc]}
     create_symlink "$misc_dir/hushlogin" "$HOME/.hushlogin" ${FEATURES[misc]}
     create_symlink "$misc_dir/alexrc" "$HOME/.alexrc" ${FEATURES[misc]}
-    create_symlink "$misc_dir/pystartup" "$HOME/.pystartup" ${FEATURES[misc]}
+    # Python pystartup removed
     
     # Create directories for special files if needed
     if [[ ${FEATURES[misc]} -eq 1 ]]; then
         mkdir -p "$HOME/.config/npm"
-        mkdir -p "$HOME/.local/pipx"
+        # Python pipx directory removed
         create_symlink "$misc_dir/default-npm-packages" "$HOME/.config/npm/default-npm-packages" ${FEATURES[misc]}
-        create_symlink "$misc_dir/pipxfile" "$HOME/.local/pipx/pipxfile" ${FEATURES[misc]}
+        # Python pipxfile removed
     fi
 }
 

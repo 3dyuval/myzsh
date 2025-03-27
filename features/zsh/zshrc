@@ -27,12 +27,12 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
 DISABLE_UPDATE_PROMPT=true
 
 # Starship
-export STARSHIP_CONFIG="$HOME/.starship.toml"
+# export STARSHIP_CONFIG="$HOME/.starship.toml"
 
 plugins=( \
-    asdf \
+  # asdf \
     brew \
-    direnv \
+  # direnv \
     docker \
     docker-compose \
     git \
@@ -44,8 +44,8 @@ plugins=( \
     redis-cli \
     screen \
     ssh-agent \
-    starship \
-    zoxide \
+  # starship \
+  # zoxide \
     zsh-autosuggestions \
     zsh-syntax-highlighting \
 )
@@ -61,10 +61,6 @@ fi
 if [ -f $HOME/.functions.zsh ]; then
     . $HOME/.functions.zsh
 fi
-
-# Python
-export PYTHONSTARTUP=$HOME/.pystartup
-export PYTHONDONTWRITEBYTECODE=1
 
 # neovim
 export EDITOR=nvim
@@ -93,8 +89,6 @@ fi
 
 autoload -Uz compinit && compinit
 
-eval "$(register-python-argcomplete pipx)"
-
 . "$HOME/.cargo/env"
 
 export GOPATH=$HOME/.go
@@ -106,3 +100,4 @@ export PATH="$GOPATH/bin:$PATH"
 # zprof
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/refs/heads/main/themes/robbyrussell.omp.json')"

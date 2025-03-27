@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f8807bd-6e21-4c7c-9099-033a45b99178" name="Changes" comment="new folder structure">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/install.oh-my-posh.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/install.starship.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dotfiles.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_blame.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README-STARSHIP.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="1f8807bd-6e21-4c7c-9099-033a45b99178" name="Changes" comment="new readme">
+      <change afterPath="$PROJECT_DIR$/themes/ohmyposh/robbyrussel.omp.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/zsh/functions.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/features/zsh/functions.zsh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/zsh/zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/features/zsh/zshrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/my.zsh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1743072097748</updated>
       <workItem from="1743072098777" duration="7069000" />
-      <workItem from="1743080194411" duration="49000" />
+      <workItem from="1743080194411" duration="84000" />
+      <workItem from="1743085315309" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="added alternative method to opt in to features">
       <option name="closed" value="true" />
@@ -107,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743079778035</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new readme">
+      <option name="closed" value="true" />
+      <created>1743080273662</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743080273662</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +120,7 @@
     <MESSAGE value="added diffrent readme for starship" />
     <MESSAGE value="added README-STARSHIP.md" />
     <MESSAGE value="new folder structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="new folder structure" />
+    <MESSAGE value="new readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="new readme" />
   </component>
 </project>

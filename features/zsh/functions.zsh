@@ -1,12 +1,19 @@
+# Generate tags file for code navigation
+# Usage: update_ctags
 update_ctags() {
-    ctags -R --fields=+l --languages=python --python-kinds=-iv -f ./.tags $(python -c "import os, sys; print(' '.join('{}'.format(d) for d in sys.path if os.path.isdir(d)))") ./
+    ctags -R -f ./.tags ./
 }
 
+# Open a Google search in your default browser
+# Usage: google [search terms]
 google() {
     local query="$*"
     open "https://www.google.com/search?q=${query}"
 }
 
+# Update Git repository - pull latest changes and clean up
+# Switches to default branch, updates, removes merged branches, and prunes remotes
+# Usage: upr [repository_path]
 upr() {
     local repo=$1
     : ${repo:=.}
@@ -41,44 +48,9 @@ upr() {
     cd - > /dev/null 2>&1
 }
 
-guni() {
-    local current_dir=`basename $(pwd)`
-    if [ -d $current_dir ]; then
-        if [ -f $current_dir/wsgi.py ]; then
-            echo Serving $current_dir with gunicorn...
-            gunicorn --reload -b 127.0.0.1:8080 $current_dir.wsgi &
-        else
-            echo "Error attempting to serve WSGI via gunicorn!"
-        fi
-    else
-        echo "Error attempting to serve WSGI via gunicorn!"
-    fi
-}
-
+# Find running processes by name using ripgrep
+# Usage: look_for_process [process_name]
 look_for_process() {
     local ps_name=$1
     ps aux | rg $ps_name
-}
-
-function setjdk() {
-  if [ $# -ne 0 ]; then
-    removeJavaFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
-    #Bash expansion will be "x" if JAVA_HOME set, emptystring if unset
-    #http://wiki.bash-hackers.org/syntax/pe#use_an_alternate_value
-    if [ -n "${JAVA_HOME+x}" ]; then
-      removeJavaFromPath "${JAVA_HOME}/bin"
-     fi
-    export JAVA_HOME=$(/usr/libexec/java_home -v "$@")
-    export PATH=$JAVA_HOME/bin:$PATH
-  else
-    echo "No argument (i.e. java version e.g. 1.7) specified"
-  fi
-}
-
-function removeJavaFromPath() {
-  if [ $# -ne 0 ]; then
-    export PATH="$(echo "$PATH" | sed -E -e "s;:$1;;" -e "s;$1:?;;")"
-  else
-    echo "No argument (java path) specified"
-  fi
 }
