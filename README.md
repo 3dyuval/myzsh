@@ -6,10 +6,18 @@ git clone https://github.com/3dyuval/myzsh.git
 cd myzsh
 ```
 
-### 2. Install ZSH and Oh My Posh (if needed)
+### 2. Install a Shell and Prompt (if needed)
+
+Choose one of the following options:
+
 ```bash
-chmod +x scripts/_install.sh
-./scripts/_install.sh
+# Option A: Install ZSH and Oh My Posh
+chmod +x scripts/install.oh-my-posh.sh
+./scripts/install.oh-my-posh.sh
+
+# Option B: Install Starship prompt
+chmod +x scripts/install.starship.sh
+./scripts/install.starship.sh
 ```
 **Restart your terminal after this step**
 
@@ -46,27 +54,60 @@ Choose which features to enable based on your needs:
 | [ZSH](features/zsh/README.md) | Shell configuration with aliases and functions | `./my.zsh --zsh` |
 | [Neovim](features/neovim/README.md) | Text editor with plugins and custom keymaps | `./my.zsh --nvim` |
 | [Git](features/git/README.md) | Version control with useful defaults and aliases | `./my.zsh --git` |
-| [Starship](features/starship/README.md) | Cross-shell prompt with custom theme ([detailed guide](README-STARSHIP.md)) | `./my.zsh --starship` |
+| [Starship](features/starship/README.md) | Cross-shell prompt with custom theme | `./my.zsh --starship` |
 | [Ripgrep](features/ripgrep/README.md) | Search tool with custom file type definitions | `./my.zsh --ripgrep` |
 | [Bat](features/bat/README.md) | Cat alternative with syntax highlighting | `./my.zsh --bat` |
 | [Misc](features/misc/README.md) | Various utility configurations | `./my.zsh --misc` |
 
-### Available Themes
+### Prompt Systems & Themes
 
-The `themes/` directory contains various themes for terminal applications:
+This repository supports two powerful prompt systems with different approaches to customization:
+
+#### Starship Prompt
+
+**Starship** is a minimal, blazing-fast prompt written in Rust that works across any shell.
+
+- **Installation**: `./scripts/install.starship.sh`
+- **Activation**: `./my.zsh --starship`
+- **Features**:
+  - Cross-shell compatibility (works in Bash, Zsh, Fish, etc.)
+  - Shows git status, runtime environments, system info
+  - Single configuration file in TOML format
+  - Simple, declarative configuration
+  - Extremely fast performance
+
+The Starship configuration in this repo shows information like:
+- Current directory
+- Git branch & status
+- Python, Node.js, and Ruby environments
+- Kubernetes context and namespace
+- AWS profile
+
+#### Oh My Posh
+
+**Oh My Posh** is a prompt theme engine that focuses on extensive visual customization.
+
+- **Installation**: `./scripts/install.oh-my-posh.sh`
+- **Available Themes**:
+  - **Atomic**: Modern, colorful theme with detailed git info
+  - **Dracula**: Dark theme using the popular Dracula palette
+  - **Nord**: Clean, minimal theme using Nord colors
+  - **Agnoster**: Rich powerline-style with extensive segments
+
+- **Usage**: After installation, add this to your shell profile:
+  ```bash
+  eval "$(oh-my-posh init zsh --config ~/WebstormProjects/dotfiles/themes/ohmyposh/dracula.omp.json)"
+  ```
+
+> **Important**: Use either Starship OR Oh My Posh, not both simultaneously.
+
+#### Terminal Color Schemes
 
 | Type | Themes | Location |
 |------|--------|----------|
-| Oh My Posh | Atomic, Dracula, Nord, Agnoster | `themes/ohmyposh/` |
 | iTerm2 | Tokyo Night Storm | `themes/iterm/tokyonight_storm.itermcolors` |
 
-See [themes/README.md](themes/README.md) for installation instructions.
-
-> **Note on Prompt Theming:** This repository supports two prompt systems:
-> - **Starship** (default, enabled with `--starship` flag) - See [README-STARSHIP.md](README-STARSHIP.md)
-> - **Oh My Posh** (alternative) - Available themes in `themes/ohmyposh/`
->
-> You should use either Starship OR Oh My Posh, not both simultaneously.
+See [themes/README.md](themes/README.md) for more detailed installation instructions.
 
 ### Homebrew Packages (Optional for macOS/Linux)
 
