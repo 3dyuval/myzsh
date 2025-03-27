@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f8807bd-6e21-4c7c-9099-033a45b99178" name="Changes" comment="new readme">
-      <change afterPath="$PROJECT_DIR$/themes/ohmyposh/robbyrussel.omp.json" afterDir="false" />
+    <list default="true" id="1f8807bd-6e21-4c7c-9099-033a45b99178" name="Changes" comment="removed java/python features">
+      <change afterPath="$PROJECT_DIR$/cli/src/Icon.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/zsh/functions.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/features/zsh/functions.zsh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/zsh/aliases.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/features/zsh/aliases.zsh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/zsh/zshrc" beforeDir="false" afterPath="$PROJECT_DIR$/features/zsh/zshrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my.zsh" beforeDir="false" afterPath="$PROJECT_DIR$/my.zsh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,15 +31,56 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/yuval/WebstormProjects/dotfiles&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/yuval/WebstormProjects/my-ink-cli&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.test.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/yuval/WebstormProjects/dotfiles/cli/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cli/src.example" />
+      <recent name="$PROJECT_DIR$/cli/src" />
+      <recent name="$PROJECT_DIR$/cli/__tests__" />
+      <recent name="$PROJECT_DIR$/todo-cli/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/cli/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v22.14.0/bin/node" />
+      <package-manager value="pnpm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/cli/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v22.14.0/bin/node" />
+      <package-manager value="pnpm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -57,7 +98,8 @@
       <updated>1743072097748</updated>
       <workItem from="1743072098777" duration="7069000" />
       <workItem from="1743080194411" duration="84000" />
-      <workItem from="1743085315309" duration="1663000" />
+      <workItem from="1743085315309" duration="6388000" />
+      <workItem from="1743092059791" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="added alternative method to opt in to features">
       <option name="closed" value="true" />
@@ -107,11 +149,24 @@
       <option name="project" value="LOCAL" />
       <updated>1743080273662</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="removed java/python features">
+      <option name="closed" value="true" />
+      <created>1743087151147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743087151147</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/cli/src/utils/feature-utils.js" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added alternative method to opt in to features" />
@@ -121,6 +176,7 @@
     <MESSAGE value="added README-STARSHIP.md" />
     <MESSAGE value="new folder structure" />
     <MESSAGE value="new readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="new readme" />
+    <MESSAGE value="removed java/python features" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed java/python features" />
   </component>
 </project>

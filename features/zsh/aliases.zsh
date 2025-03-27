@@ -78,3 +78,7 @@ alias named='find . -name'
 alias vi=nvim
 alias vim=nvim
 alias dif='diff --side-by-side --suppress-common-lines'
+
+alias gc='~/WebstormProjects/gc/gc-run.sh'
+alias gckill='killall gc-run.sh'
+. "$HOME/.cargo/env"
